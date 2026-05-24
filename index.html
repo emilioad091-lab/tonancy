@@ -3,13 +3,14 @@
 <head>
 <title>Hola Amor 💖</title>
 <link rel="icon" href="icon.ico">
-<!-- FUENTE BONITA -->
+<!-- FUENTE -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 <style>
 body{
     background-color:#FCA4F6;
     font-family:'Poppins', sans-serif;
     margin:40px;
+    overflow-x:hidden;
 }
 /* TITULO */
 .titulo{
@@ -42,7 +43,7 @@ body{
 /* TEXTO */
 .texto{
     font-size:23px;
-    color:black;
+   color:black;
 }
 /* BOTON */
 .boton{
@@ -68,6 +69,32 @@ body{
     color:#8B006B;
     font-size:25px;
 }
+/* CONTADOR */
+.contador{
+    text-align:center;
+    font-size:30px;
+    color:#AB37A3;
+    margin-top:40px;
+    font-weight:bold;
+}
+/* CORAZONES */
+.corazon{
+    position:fixed;
+    color:#ff4da6;
+    animation: flotar 6s linear infinite;
+    font-size:25px;
+    pointer-events:none;
+}
+@keyframes flotar{
+    0%{
+        transform:translateY(100vh) rotate(0deg);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-10vh) rotate(360deg);
+        opacity:0;
+    }
+}
 </style>
 </head>
 <body>
@@ -79,7 +106,7 @@ Feliz 1er Mes Amorcito 💖
 <!-- TEXTO -->
 <div class="texto">
 <img src="nos.jpg" class="foto">
-Hola Amor, espero que te encuentres excelente.
+Hola Amor, espero que te encuentres excelente 💖
 El día de hoy es nuestro 1er mes juntos y qué rápido pasa el tiempo.
 Cada día te amo más que el anterior y aunque no tengamos mucho tiempo juntos,
 te has vuelto una persona demasiado importante para mí.
@@ -109,10 +136,42 @@ Lo Nuestro 💖
 <source src="historia.mp4" type="video/mp4">
 </video>
 </center>
+<!-- CONTADOR -->
+<div id="contador" class="contador">
+</div>
 <br><br><br>
 <!-- MENSAJE FINAL -->
 <div class="final">
 Gracias por hacerme tan feliz 💕
 </div>
+<!-- SCRIPT -->
+<script>
+/* FECHA */
+const fechaInicio = new Date("2026-04-25");
+/* CONTADOR */
+function actualizarContador(){
+    const hoy = new Date();
+    const diferencia = hoy - fechaInicio;
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    document.getElementById("contador").innerHTML =
+    "💖 Llevamos " + dias + " días juntos 💖";
+}
+setInterval(actualizarContador, 1000);
+actualizarContador();
+/* CORAZONES */
+function crearCorazon(){
+    const corazon = document.createElement("div");
+    corazon.classList.add("corazon");
+    corazon.innerHTML = "💖";
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.fontSize =
+    Math.random() * 20 + 20 + "px";
+    document.body.appendChild(corazon);
+    setTimeout(() => {
+        corazon.remove();
+    }, 6000);
+}
+setInterval(crearCorazon, 300);
+</script>
 </body>
 </html>
