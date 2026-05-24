@@ -1,59 +1,118 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Hola Amor</title>
+<title>Hola Amor 💖</title>
 <link rel="icon" href="icon.ico">
+<!-- FUENTE BONITA -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<style>
+body{
+    background-color:#FCA4F6;
+    font-family:'Poppins', sans-serif;
+    margin:40px;
+}
+/* TITULO */
+.titulo{
+    text-align:center;
+    font-size:55px;
+    color:#AB37A3;
+    text-decoration:underline;
+    animation: aparecer 2s ease;
+}
+/* ANIMACION */
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
+/* FOTO */
+.foto{
+    width:400px;
+    height:300px;
+    float:right;
+    border-radius:20px;
+    box-shadow:0px 0px 20px gray;
+    margin-left:20px;
+}
+/* TEXTO */
+.texto{
+    font-size:23px;
+    color:black;
+}
+/* BOTON */
+.boton{
+    background:#AB37A3;
+    color:white;
+    padding:15px 25px;
+    border-radius:15px;
+    text-decoration:none;
+    font-size:25px;
+    transition:0.3s;
+}
+.boton:hover{
+    background:#ff66cc;
+}
+/* VIDEO */
+.video{
+    border-radius:20px;
+    box-shadow:0px 0px 20px #AB37A3;
+}
+/* MENSAJE FINAL */
+.final{
+    text-align:center;
+    color:#8B006B;
+    font-size:25px;
+}
+</style>
 </head>
-<body style="background-color:#FCA4F6; font-family:Arial;">
-	<center>
-<font size="7" color="#AB37A3">
-<u>Feliz 1er Mes Amorcito 💖</u>
-</font>
-</center>
+<body>
+<!-- TITULO -->
+<h1 class="titulo">
+Feliz 1er Mes Amorcito 💖
+</h1>
 <br><br>
-	<font size="4" color="black">
-<img src="nos.jpg" width="400" height="300" align="right" style="border-radius:20px;">
+<!-- TEXTO -->
+<div class="texto">
+<img src="nos.jpg" class="foto">
 Hola Amor, espero que te encuentres excelente.
 El día de hoy es nuestro 1er mes juntos y qué rápido pasa el tiempo.
 Cada día te amo más que el anterior y aunque no tengamos mucho tiempo juntos,
 te has vuelto una persona demasiado importante para mí.
 No existen palabras con las que pueda expresar el increíble amor que siento por ti.
 Aunque no sea muy bueno con las palabras, quiero que siempre recuerdes que te amo
-y amaré con todo mi corazón. 💖
+y amaré con todo mi corazón 💖
 <br><br>
 Te hice esto para expresar lo mucho que siento por ti.
 También hice esta playlist pensando en ti amor, espero que te guste mucho.
-</font>
-<br><br>
-
-		<a href="https://open.spotify.com/playlist/5jiLucsZGLaDHsPawrszK9?si=1d922336b7c14045" target="_blank">
-<font size="5">
-🎵 Escuchar playlist 🎵
-</font>
-</a>
-<br><br><br><br>
-<center>
-<font size="5" color="black">
-No olvides activar el sonido amor 🔊
-</font>
-</center>
-<br><br>
-
-		<div align="center">
-<h2>
-<font size="6" face="Brush Script MT" color="Black">
-Lo Nuestro 💖
-</font>
-</h2>
-<video autoplay muted loop controls width="750" style="border-radius:20px;">
-<source src="historia.mp4" type="video/mp4">
-</video>
 </div>
 <br><br><br>
+<!-- BOTON SPOTIFY -->
 <center>
-<font size="4" color="#8B006B">
-Gracias por hacerme tan feliz 💕
-</font>
+<a href="https://open.spotify.com/playlist/5jiLucsZGLaDHsPawrszK9?si=1d922336b7c14045"
+target="_blank"
+class="boton">
+🎵 Escuchar playlist 🎵
+</a>
 </center>
+<br><br><br><br>
+<!-- VIDEO -->
+<center>
+<h2 style="font-size:45px; color:black;">
+Lo Nuestro 💖
+</h2>
+<video autoplay muted loop controls width="750" class="video">
+<source src="historia.mp4" type="video/mp4">
+</video>
+</center>
+<br><br><br>
+<!-- MENSAJE FINAL -->
+<div class="final">
+Gracias por hacerme tan feliz 💕
+</div>
 </body>
 </html>
