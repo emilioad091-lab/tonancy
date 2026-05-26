@@ -1,53 +1,38 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
 <title>Hola Amor 💖</title>
-
-<link rel="icon" href="icon.ico">
-
-<!-- FUENTE -->
-
 <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
-
+<!-- FUENTE -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 <style>
-
 body{
-    background-color:#FCA4F6;
+    background: linear-gradient(135deg, #FCA4F6, #ffd6f6);
     font-family:'Poppins', sans-serif;
     margin:40px;
     overflow-x:hidden;
 }
-
 /* TITULO */
-
 .titulo{
     text-align:center;
     font-size:55px;
     color:#AB37A3;
     text-decoration:underline;
     animation: aparecer 2s ease;
+    text-shadow:0px 0px 15px #ff66cc;
 }
-
-/* ANIMACION */
-
+/* ANIMACION TITULO */
 @keyframes aparecer{
-
     from{
         opacity:0;
         transform:translateY(-30px);
     }
-
     to{
         opacity:1;
         transform:translateY(0px);
     }
-
 }
-
 /* FOTO */
-
 .foto{
     width:400px;
     height:300px;
@@ -56,18 +41,18 @@ body{
     box-shadow:0px 0px 20px gray;
     margin-left:20px;
     margin-bottom:20px;
+    transition:0.5s;
 }
-
+.foto:hover{
+    transform:scale(1.03);
+}
 /* TEXTO */
-
 .texto{
     font-size:23px;
     color:black;
     line-height:1.6;
 }
-
 /* BOTON */
-
 .boton{
     background:#AB37A3;
     color:white;
@@ -76,29 +61,39 @@ body{
     text-decoration:none;
     font-size:25px;
     transition:0.3s;
+    animation: latido 1.5s infinite;
 }
-
 .boton:hover{
     background:#ff66cc;
 }
-
+/* ANIMACION BOTON */
+@keyframes latido{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.05);
+}
+100%{
+transform:scale(1);
+}
+}
 /* VIDEO */
-
 .video{
     border-radius:20px;
     box-shadow:0px 0px 20px #AB37A3;
+    transition:0.5s;
 }
-
+.video:hover{
+    transform:scale(1.02);
+}
 /* MENSAJE FINAL */
-
 .final{
     text-align:center;
     color:#8B006B;
     font-size:25px;
 }
-
 /* CONTADOR */
-
 .contador{
     text-align:center;
     font-size:30px;
@@ -106,9 +101,7 @@ body{
     margin-top:40px;
     font-weight:bold;
 }
-
 /* CORAZONES */
-
 .corazon{
     position:fixed;
     color:#ff4da6;
@@ -116,162 +109,112 @@ body{
     pointer-events:none;
     z-index:9999;
 }
-
 @keyframes flotar{
-
     0%{
         transform:translateY(100vh) rotate(0deg);
         opacity:1;
     }
-
     100%{
         transform:translateY(-10vh) rotate(360deg);
         opacity:0;
-    }
-
+   } 
 }
-
+/* GALERIA */
+.galeria{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+.galeria img{
+    width:300px;
+    border-radius:20px;
+    box-shadow:0px 0px 15px gray;
+    transition:0.5s;
+}
+.galeria img:hover{
+    transform:scale(1.05);
+}
 </style>
-
 </head>
-
 <body>
-
 <!-- TITULO -->
-
 <h1 class="titulo">
 Feliz 1er Mes Amorcito 💖
 </h1>
-
 <br><br>
-
 <!-- TEXTO -->
-
 <div class="texto">
-
 <img src="nos.jpg" class="foto">
-
 Hola Amor, espero que te encuentres excelente 💖
-
 El día de hoy es nuestro 1er mes juntos y qué rápido pasa el tiempo.
 Cada día te amo más que el anterior y aunque no tengamos mucho tiempo juntos,
 te has vuelto una persona demasiado importante para mí.
-
 No existen palabras con las que pueda expresar el increíble amor que siento por ti.
 Aunque no sea muy bueno con las palabras, quiero que siempre recuerdes que te amo
 y amaré con todo mi corazón 💖
-
 <br><br>
-
 Te hice esto para expresar lo mucho que siento por ti.
 También hice esta playlist pensando en ti amor, espero que te guste mucho.
-
 </div>
-
 <br><br><br>
-
 <!-- BOTON SPOTIFY -->
-
 <center>
-
 <a href="https://open.spotify.com/playlist/5jiLucsZGLaDHsPawrszK9?si=1d922336b7c14045"
 target="_blank"
 class="boton">
-
 🎵 Escuchar playlist 🎵
-
 </a>
-
 </center>
-
 <br><br><br><br>
-
 <!-- VIDEO -->
-
 <div style="clear:both; text-align:center;">
-
 <h2 style="font-size:45px; color:black;">
 Lo Nuestro 💖
 </h2>
-
 <video autoplay muted loop controls width="750" class="video">
-
 <source src="historia.mp4" type="video/mp4">
-
 </video>
-
 </div>
-
 <!-- CONTADOR -->
-
 <div id="contador" class="contador">
-
 </div>
-
 <br><br><br>
-
 <!-- MENSAJE FINAL -->
-
 <div class="final">
-
 Gracias por hacerme tan feliz 💕
-
 </div>
-
 <!-- SCRIPT -->
-
 <script>
-
 /* FECHA */
-
-const fechaInicio = new Date("2026-04-25");
-
+const fechaInicio = new Date("2025-04-25");
 /* CONTADOR */
-
 function actualizarContador(){
-
     const hoy = new Date();
-
     const diferencia = hoy - fechaInicio;
-
     const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-
     document.getElementById("contador").innerHTML =
     "💖 Llevamos " + dias + " días juntos 💖";
-
 }
-
 actualizarContador();
-
 setInterval(actualizarContador, 1000);
-
 /* CORAZONES */
-
 function crearCorazon(){
-
     const corazon = document.createElement("div");
-
-    corazon.innerHTML = "💖";
-
+    const emojis = ["💖","💕","💗","💘"];
+    corazon.innerHTML =
+    emojis[Math.floor(Math.random() * emojis.length)];
     corazon.className = "corazon";
-
     corazon.style.left = Math.random() * 100 + "vw";
-
     corazon.style.fontSize =
     (Math.random() * 20 + 20) + "px";
-
     document.body.appendChild(corazon);
-
     setTimeout(() => {
         corazon.remove();
     }, 6000);
-
 }
-
 setInterval(crearCorazon, 300);
-
 </script>
-
 </body>
 
 </html>
