@@ -12,7 +12,6 @@
 <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
 
 <!-- FUENTE -->
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
 <style>
@@ -311,29 +310,52 @@ const fechaInicio = new Date("2026-04-25");
 function actualizarContador(){
 
     const hoy = new Date();
+
     const diferencia = hoy - fechaInicio;
+
     const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+
     document.getElementById("contador").innerHTML =
     "💖 Llevamos " + dias + " días juntos 💖";
+
 }
+
 actualizarContador();
-setInterval(actualizarContador, 1000)
+
+setInterval(actualizarContador, 1000);
+
 /* CORAZONES */
+
 function crearCorazon(){
+
     const corazon = document.createElement("div");
+
     const emojis = ["💖","💕","💗","💘"];
+
     corazon.innerHTML =
     emojis[Math.floor(Math.random() * emojis.length)];
+
     corazon.className = "corazon";
+
     corazon.style.left = Math.random() * 100 + "vw";
+
     corazon.style.fontSize =
     (Math.random() * 20 + 20) + "px";
+
     document.body.appendChild(corazon);
+
     setTimeout(() => {
+
         corazon.remove();
+
     }, 6000);
+
 }
+
 setInterval(crearCorazon, 300);
+
 </script>
+
 </body>
+
 </html>
